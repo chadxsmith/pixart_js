@@ -7,6 +7,14 @@
   margin: 15px auto;
 }
 
+.swatch {
+   float: left;
+   width: 30px;
+   height: 30px;
+   background: white;
+   margin: 0;
+ }
+ 
 .square {
   float: left;
   width: 10px;
