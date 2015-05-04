@@ -1,4 +1,4 @@
-var inputs = []
+var inputs = [];
 var color;
 
 
@@ -10,24 +10,35 @@ function changeBoxColor() {
 }
 
 //Change color of box (Click)
-document.getElementById("set-color").addEventListener("click", changeBoxColor)
+document.getElementById("set-color").addEventListener("click", changeBoxColor);
 
 
-//Change color of smallbox and append to bottom of page (Function )
-function smallBoxCreator(current) {
-  console.log('running');
+//Creates smallbox, give style, and append to bottom of page (Function )
+function smallBoxCreator() {
   for (i = 0; i < 8000; i++){
-    current = document.createElement('div');
-    current.className = "square";
-    current.style.backgroundColor = color;
-    document.body.appendChild(current);
+    var box = document.createElement('div');
+    box.className = "square"
+    document.body.appendChild(box);
   }
 }
 
-//Change color of smallbox (Hoover)
-document.querySelector("div").addEventListener("click", smallBoxCreator(this))
+//Creates smallbox and append to bottom of page (Event Listener )
+window.onload = smallBoxCreator;
 
 
+
+//Color smallboxes(Function)
+function smallBoxColor() {
+  this.style.backgroundColor = color;
+}
+
+
+//Color smallboxes(Event Listener)
+  var square = document.querySelectorAll("square");
+
+  for (var i = 0; i < square.length; i++) {
+    square[i].addEventListener("mouseover", smallBoxColor)
+  }
 
 
 
